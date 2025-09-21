@@ -1,81 +1,131 @@
-Login Form using MERN Stack
-This is a full-stack login and registration application built using the MERN stack (MongoDB, Express.js, React, and Node.js).
+MERN Authentication App
 
-Features
-User registration with password hashing.
+This is a full-stack authentication system built with the MERN stack (MongoDB, Express.js, React, Node.js).
+It includes user registration, login, password hashing, and JWT-based authentication.
 
-User login with JSON Web Tokens (JWT) for authentication.
+✨ Features
 
-Separate frontend and backend applications.
+🔒 User registration with password hashing (bcryptjs)
 
-Tech Stack
+🔑 User login with JWT authentication
+
+⚡ Secure backend API with Express & MongoDB
+
+🎨 Frontend built with React + Vite
+
+🔁 Full MERN stack integration
+
+📂 Separate frontend/ and server/ folders
+
+🛠 Tech Stack
 Backend (Server)
-Framework: Express.js
 
-Database: MongoDB via Mongoose
+Express.js – Server framework
 
-Authentication: bcryptjs for password hashing and jsonwebtoken for creating secure tokens.
+MongoDB + Mongoose – Database
 
-Environment Variables: dotenv
+bcryptjs – Password hashing
 
-Development: nodemon for automatic server restarts.
+jsonwebtoken – JWT authentication
 
-Frontend
-Framework: React
+dotenv – Environment variables
 
-Build Tool: Vite
+nodemon – Development auto-restart
 
-Routing: react-router-dom
+Frontend (Client)
 
-API Calls: axios
+React (Vite) – UI framework
 
-Project Structure
-The project is divided into two main folders: frontend and server.
+react-router-dom – Routing
 
-server/: Contains the backend logic.
+axios – API calls
 
-frontend/: Contains the React application.
+📂 Project Structure
+mern-auth/
+│── server/       # Backend
+│   ├── models/
+│   │   └── User.js
+│   ├── routes/
+│   │   └── auth.js
+│   ├── server.js
+│   └── .env
+│
+│── frontend/     # Frontend
+│   ├── src/
+│   │   ├── App.jsx
+│   │   ├── pages/
+│   │   │   ├── Login.jsx
+│   │   │   └── Register.jsx
+│   │   └── main.jsx
+│   └── vite.config.js
 
-Getting Started
-Prerequisites
-Node.js installed on your machine.
+🚀 Getting Started
+📌 Prerequisites
 
-MongoDB instance running (local or cloud-based).
+Node.js installed
 
-Installation
-Clone the repository:
+MongoDB instance (local or Atlas)
 
-Bash
+🔧 Installation
+1️⃣ Clone repo
+git clone https://github.com/yourusername/mern-auth.git
+cd mern-auth
 
-git clone <repository-url>
-cd <repository-name>
-Navigate to the server directory and install dependencies:
-
-Bash
-
+2️⃣ Backend setup
 cd server
 npm install
-Create a .env file in the server directory with your MongoDB URI and a JWT secret.
 
-Code snippet
 
-# .env file inside server/
-MONGO_URI="mongodb+srv://<username>:<password>@<cluster-name>.mongodb.net/<database>?retryWrites=true&w=majority"
+Create .env file inside server/:
+
+MONGO_URI="mongodb+srv://<username>:<password>@cluster.mongodb.net/?retryWrites=true&w=majority"
 JWT_SECRET="your_secret_key"
-Run the backend server in development mode:
+PORT=5000
 
-Bash
+
+Run backend:
 
 npm run dev
-In a new terminal, navigate to the frontend directory and install dependencies:
 
-Bash
-
+3️⃣ Frontend setup
 cd ../frontend
 npm install
-Run the frontend application in development mode:
-
-Bash
-
 npm run dev
-The application will be accessible at http://localhost:5173.
+
+🌍 API Endpoints
+Register User
+
+POST /api/auth/register
+
+{
+  "name": "John Doe",
+  "Email": "john@example.com",
+  "Password": "mypassword"
+}
+
+Login User
+
+POST /api/auth/login
+
+{
+  "Email": "john@example.com",
+  "Password": "mypassword"
+}
+
+
+Response:
+
+{
+  "message": "Login successful",
+  "token": "jwt_token_here"
+}
+
+🖼️ Screens
+
+Register Page
+
+Login Page
+
+🤝 Contributing
+
+Pull requests are welcome! For major changes, open an issue first to discuss.
