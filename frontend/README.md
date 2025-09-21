@@ -1,12 +1,81 @@
-# React + Vite
+Login Form using MERN Stack
+This is a full-stack login and registration application built using the MERN stack (MongoDB, Express.js, React, and Node.js).
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Features
+User registration with password hashing.
 
-Currently, two official plugins are available:
+User login with JSON Web Tokens (JWT) for authentication.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Separate frontend and backend applications.
 
-## Expanding the ESLint configuration
+Tech Stack
+Backend (Server)
+Framework: Express.js
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Database: MongoDB via Mongoose
+
+Authentication: bcryptjs for password hashing and jsonwebtoken for creating secure tokens.
+
+Environment Variables: dotenv
+
+Development: nodemon for automatic server restarts.
+
+Frontend
+Framework: React
+
+Build Tool: Vite
+
+Routing: react-router-dom
+
+API Calls: axios
+
+Project Structure
+The project is divided into two main folders: frontend and server.
+
+server/: Contains the backend logic.
+
+frontend/: Contains the React application.
+
+Getting Started
+Prerequisites
+Node.js installed on your machine.
+
+MongoDB instance running (local or cloud-based).
+
+Installation
+Clone the repository:
+
+Bash
+
+git clone <repository-url>
+cd <repository-name>
+Navigate to the server directory and install dependencies:
+
+Bash
+
+cd server
+npm install
+Create a .env file in the server directory with your MongoDB URI and a JWT secret.
+
+Code snippet
+
+# .env file inside server/
+MONGO_URI="mongodb+srv://<username>:<password>@<cluster-name>.mongodb.net/<database>?retryWrites=true&w=majority"
+JWT_SECRET="your_secret_key"
+Run the backend server in development mode:
+
+Bash
+
+npm run dev
+In a new terminal, navigate to the frontend directory and install dependencies:
+
+Bash
+
+cd ../frontend
+npm install
+Run the frontend application in development mode:
+
+Bash
+
+npm run dev
+The application will be accessible at http://localhost:5173.
